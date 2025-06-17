@@ -1,0 +1,46 @@
+Open atlas and head over to dashboard
+
+1. create a new project
+2. create a cluster free tier as it is default
+3. copy the password and create db user
+4. copy the url with password anf install mongoose
+5. go to network access and add anyone can access anywhere
+6. browse collections, connect to database
+7. npm install mongoose@7.0.3
+8. npm run dev
+use this template 
+
+import mongoose from "mongoose";
+
+export const connectDB = async ()=>{
+    try{
+        mongoose.connect("mongodb+srv://sairamrdya:vmtcS1DKj2UxSaBJ@cluster0.r3jdoex.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+        console.log("Database connected successfully");
+    }
+    catch(err){
+        console.error("Database connection failed:", err);
+    }
+}
+
+HOW TO CREATE SCHEMA OF Database
+
+1. use the mongoose commands or file operations
+2. define the SCHEMA
+const noteSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+    },
+    content: {
+      type: String,
+      required: true,
+    },
+  },
+  { timestamps: true }
+  //createdAt, updatedAt)
+
+const Note = mongoose.model("Note", noteSchema);
+3. export the SCHEMA
+4. import in controllers and manipulate
+const notes=await Note.find();

@@ -1,0 +1,57 @@
+1. open the frontend folder
+2. npm createvite@latest .
+3. choose react, js 
+4. npm install
+5. npm run dev
+6. npm install react-router
+7. npm install react-hot-toast
+
+What to delete???
+--App.css
+--assets
+What to clear data??
+--index.css
+--App.jsx
+
+SHORTCUTS::
+rafce for template of react
+
+SIMPLE TOAST ANIMATIONS:
+using react-hot-toast we can add simple animations
+
+HOW TO SETUP TAILWIND USING REACT:
+1. go to docs of TAILWIND
+2. install dependencies
+npm create vite@latest my-project -- --template react
+cd my-project
+
+3. install tailwind
+npm install -D tailwindcss@3 postcss autoprefixer
+npx tailwindcss init -p
+
+4. configure config files
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+4. add this to index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+5. npm run dev
+
+USE DAISY UI for themes and easy responsive design with tailwind
+easy peasy japaneesy
+
+CORS --> cross origin resource sharing
+when a website tries to get data from other website it blocks it
+for security reasons

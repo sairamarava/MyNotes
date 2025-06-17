@@ -1,0 +1,65 @@
+## To build backend API
+Create a folder bbackend
+1. open terminal 
+2. npm init -y
+--> gives the package.json file
+3. npm install express@4.18.2 --> specific version
+
+These packages no need anthing to change or work with
+
+create a app.js, index.js, server.js here....!!!!
+
+HOW TP RUN IT???
+npm run, npm run dev not working???
+1. node app.js/server.js
+2. if you want to use import stmt add "type":"module" in package.json 
+
+1. Go to scripts chnage the "dev" to "node server.js"
+2. npm run dev
+
+RESt API::
+GET -->get some data
+POST --> create data
+PUT --> update
+DELETE --> delete
+
+STATUS CODE:
+1xx --> informational
+2xx --> success. 200,201
+3xx --> Redirection, moved permanently
+4xx --> client errors(you as client messed)
+5xx --> server errors ()
+
+TO automate the server restarting:
+NODEMON-->1.  npm install nodemon -D (as dependency)
+          2.  go to package.json change it to nodmeon server.js
+
+END POINT?
+An endpoint is a combination of url + http method that lets client interact with specific resource
+
+TWO TYPES of makigng routes::
+1. Common JS using require() module.exports = ;, type="module" in package.json
+2. EJS using import export
+
+HOW TO ADD ENV VAR:
+1. make a .env in root folder of backend
+2. npm i dotenv
+3. use the template 
+import dotenv from "dotenv";  
+
+dotenv.config(); // Load environment variables from .env file
+4. process.env.URL_NAME
+5. this is how to use env var
+
+
+MIDDLEWARE
+is a function that runs in the middle between req and res
+to authorise
+
+RATE LIMITING
+a way to control how often someone can do something ona  website like how many times can they make a api req or try to login
+ex only 100 req per user every 15 min
+
+Preventing absue and protecting servers
+
+Ex: upstash --> redis a db
