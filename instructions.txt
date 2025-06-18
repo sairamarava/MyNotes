@@ -63,3 +63,28 @@ ex only 100 req per user every 15 min
 Preventing absue and protecting servers
 
 Ex: upstash --> redis a db
+
+FOR DEPLOYING::
+1. push the code to the github with .gitignore
+2. run npm init -y for package.json
+3. in the package.json add "build":
+4. go to backend server.js --> import path
+and const __dirname = path.resolve();
+    app.use(express.static(path.join(__dirname,"../frontend/dist")))
+to server as static files
+5. if the user access any site other than //notes/:
+app.get("*",(req,res)=>{
+  res.sendFile(path.join(__dirname,"../frontend","dist","index.html"));
+})
+6. update middle ware 
+if(process.env.NODE_ENV!=='production'){
+  app.use(cors({
+    origin: "http://localhost:5173",
+  }))
+}
+7. change the axios.js routing:
+//in production there is no localhost we have to make this dynamic
+const BASE_URL=import.meta.env.MODE==="development"?"http://localhost:50001/api":"/api"
+const api = axios.create({
+  baseURL: BASE_URL
+});
